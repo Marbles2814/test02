@@ -16,6 +16,8 @@ class Flights extends BaseController
         ];
 
         return view('templates/header', $data)
+            .view('templates/Welcome')
+            .view('templates/Welcome2')
             . view('flights/index')
             . view('templates/footer');
     }
