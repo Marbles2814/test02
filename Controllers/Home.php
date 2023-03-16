@@ -8,19 +8,29 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
-    }
-    public function view($page = 'home')
-    {
-         if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
-            // Whoops, we don't have a page for that!
-            throw new PageNotFoundException($page);
-        }
-
-        $data['title'] = ucfirst($page); // Capitalize the first letter
-
-        return view('templates/header', $data)
-            . view('templates/Welcome')
+        return view('templates/header')
+            .view('templates/navbarB')
+            .view('templates/Welcome')
+            .view('templates/Welcome2')
+//            . view('flights/index')
             . view('templates/footer');
     }
+    public function login(){
+       return view('templates/header')
+          .view('templates/navbarW')
+          .view('templates/loginBod')
+          .view('templates/footer');
+}
+    public function register(){
+        return view('templates/header')
+           .view('templates/navbarW')
+           .view('templates/registerBod')
+           .view('templates/footer');
+}
+    public function vacation(){
+        return view('templates/header')
+           .view('templates/navbarB')
+           .view('templates/vacation')
+           .view('templates/footer');
+}
 }
