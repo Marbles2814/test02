@@ -1,3 +1,4 @@
+<form action="<?php base_url();?>/login">
 <div class="container">
     <h2>Choose your departure city:<br /></h2>
     <select name="fromPort" class="form-inline"><option value="Paris">Paris</option>slot
@@ -21,5 +22,9 @@
    <option value="Cairo">Cairo</option>slot
    </select>
    <br />
-<a href="FindFlight.html" class="btn btn-info" role="button">FindFlight</a>
+   
+   <input type="submit" class="btn btn-primary" value="sasaad">
+   
+   
    </div>
+</form>
