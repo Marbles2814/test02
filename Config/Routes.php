@@ -32,7 +32,7 @@ $routes->get('/', 'Home::index');
 //-------------------------------------
 use App\Controllers\Flights;
 //-------------------------------------
-
+$routes->match(['get', 'post'], 'flights/create', [Flights::class, 'create']);
 use App\Controllers\Pages;
 //-------------------------------------
 $routes->get('flights/(:segment)', [Flights::class, 'view']);
@@ -41,9 +41,14 @@ $routes->get('flights', [Flights::class, 'index']);
 $routes->get('/login', 'Home::login');
 $routes->get('/register','Home::register');
 $routes->get('/vacation','Home::vacation');
+$routes->get('/reserve','Home::reserve');
+$routes->get('/purchase','Home::purchase');
+$routes->get('/resetpassword','Home::resetpassword');
 //-------------------------------------
 
 use App\Controllers\News;
+
+$routes->match(['get', 'post'], 'news/create', [News::class, 'create']);
 
 $routes->get('news/(:segment)', [News::class, 'view']);
 $routes->get('news', [News::class, 'index']);

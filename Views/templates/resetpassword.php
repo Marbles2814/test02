@@ -25,17 +25,12 @@
             <p class="text-left" for="mail"style="color:Gray;" >E-Mail Address:</p>
             <input type="text" class="form-control" id="usr">
           </div>
-          <div class="form-group">
-            <p  class="text-left"  for="pwd"style="color:Gray;">Password:</p>
-            <input type="password" class="form-control" id="pwd">
-          </div>
           
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-            <label class="form-check-label" for="form2Example31"> Remember me <br /> <br /></label>
-          </div>
         <div class="container">
-          <button type="button" class="btn btn-primary" id="hi">Login</button>
-          <p><a href="/resetpassword">Forgot your pasword?</a><br /></p>
+          <button type="button" class="btn btn-primary" id="hi">Send password reset link</button>
+          
         </div>
       </div>
+      
+
+</section>

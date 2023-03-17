@@ -1,3 +1,5 @@
+
+<form action="/templates/create" method="post">
 <section class=" text-center text-lg-start">
   <style>
     .rounded-t-5 {
@@ -49,3 +51,4 @@
         </div>
       </div>
       
+</form>

@@ -33,4 +33,25 @@ class Home extends BaseController
            .view('templates/vacation')
            .view('templates/footer');
 }
+    public function reserve()
+    {
+        return view('templates/header')
+            .view('templates/navbarB')
+            .view('templates/reserve')
+            .view('templates/footer');
+}
+    public function purchase()
+    {
+        return view('templates/header')
+            .view('templates/navbarB')
+            .view('templates/purchase')
+            . view('templates/footer');
+}
+    public function resetpassword()
+    {
+        return view('templates/header')
+            .view('templates/navbarB')
+            .view('templates/resetpassword')
+            . view('templates/footer');
+}
 }

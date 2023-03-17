@@ -1,4 +1,4 @@
-<form action="<?php base_url();?>/login">
+<form action="<?php base_url();?>/reserve">
 <div class="container">
     <h2>Choose your departure city:<br /></h2>
     <select name="fromPort" class="form-inline"><option value="Paris">Paris</option>slot

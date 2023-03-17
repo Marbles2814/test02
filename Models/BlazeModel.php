@@ -7,6 +7,8 @@ use CodeIgniter\Model;
 class BlazeModel extends Model
 {
     protected $table = 'flights';
+//    protected $table = 'users';
+    protected $allowedFields = ['Name', 'Company', 'Email', 'Password'];
 
     public function getFlights($id = false)
     {
