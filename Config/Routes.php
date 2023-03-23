@@ -34,6 +34,7 @@ $routes->get('/', 'Home::index');
 use App\Controllers\Flights;
 //-------------------------------------
 $routes->match(['get', 'post'], 'flights/create', [Flights::class, 'create']);
+$routes->match(['get', 'post'], 'flights/reserve', [Flights::class, 'reserve']);
 use App\Controllers\Pages;
 //-------------------------------------
 $routes->get('flights/(:segment)', [Flights::class, 'view']);

@@ -23,7 +23,7 @@ class Flights extends BaseController
 
         return view('templates/header', $data)
             .view('templates/navbarB')
-            . view('flights/index')
+            . view('flights/index',$data)
             . view('templates/footer');
     }
 
@@ -78,6 +78,47 @@ public function viewflights()
             // The validation fails, so returns the form.
             return view('templates/header', ['title' => 'Create user'])
                 . view('flights/create')
+                . view('templates/footer');
+        }
+
+        $model = model(BlazeModel::class);
+
+        $model->save([
+            'Name' => $post['Name'],
+            'Company'  => $post['Company'],
+            'Email' => $post['Email'],
+            'Password'  => $post['Password'],
+        ]);
+
+        return view('templates/header', ['title' => 'Create user'])
+            . view('flights/success')
+            . view('templates/footer');
+    }
+
+    public function reserve()
+    {
+        helper('form');
+
+        // Checks whether the form is submitted.
+        if (! $this->request->is('post')) {
+            // The form is not submitted, so returns the form.
+            return view('templates/header', ['title' => 'Create user'])
+                . view('flights/reserve')
+                . view('templates/footer');
+        }
+
+        $post = $this->request->getPost(['Name', 'Company','Email','Password']);
+
+        // Checks whether the submitted data passed the validation rules.
+        if (! $this->validateData($post, [
+            'Name' => 'required|max_length[255]|min_length[3]',
+            'Company'  => 'required|max_length[255]|min_length[3]',
+            'Email' => 'required|max_length[255]|min_length[3]',
+            'Password'  => 'required|max_length[255]|min_length[3]',        
+])) {
+            // The validation fails, so returns the form.
+            return view('templates/header', ['title' => 'Create user'])
+                . view('flights/reserve')
                 . view('templates/footer');
         }
 
