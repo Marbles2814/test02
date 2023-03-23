@@ -1,5 +1,7 @@
 
-<form action="/templates/create" method="post">
+
+
+
 <section class=" text-center text-lg-start">
   <style>
     .rounded-t-5 {
@@ -29,11 +31,11 @@
           </div>
           <div class="form-group">
             <p  class="text-left"  for="pwd"style="color:Gray;">Company:</p>
-            <input type="password" class="form-control" id="pwd">
+            <input type="text" class="form-control" id="pwd">
           </div>
           <div class="form-group">
             <p  class="text-left"  for="pwd"style="color:Gray;">E-Mail Address</p>
-            <input type="password" class="form-control" id="pwd">
+            <input type="text" class="form-control" id="pwd">
           </div>
           <div class="form-group">
             <p  class="text-left"  for="pwd"style="color:Gray;">Password:</p>

@@ -6,6 +6,12 @@ use App\Models\BlazeModel;
 
 class Flights extends BaseController
 {
+                                 
+    public function __construct()
+	{
+		$this->db = \Config\Database::connect();
+	}
+                                              
     public function index()
     {
          $model = model(BlazeModel::class);
@@ -17,12 +23,19 @@ class Flights extends BaseController
 
         return view('templates/header', $data)
             .view('templates/navbarB')
-            .view('templates/Welcome')
-            .view('templates/Welcome2')
             . view('flights/index')
             . view('templates/footer');
     }
 
+
+                            
+public function viewflights()
+{
+    $this->load->model('BlazeModel');
+    $data['flights'] = $this->BlazeModel->getflights();   
+    $this->load->view('flights/index', $data);
+}
+                           
     public function view($id = null)
     {
         $model = model(BlazeModel::class);
@@ -39,6 +52,8 @@ class Flights extends BaseController
             . view('flights/view')
             . view('templates/footer');
     }
+
+
     public function create()
     {
         helper('form');
