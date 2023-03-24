@@ -57,7 +57,8 @@ public function viewflights()
         // Checks whether the form is submitted.
         if (! $this->request->is('post')) {
             // The form is not submitted, so returns the form.
-            return view('templates/header', ['title' => 'Create user'])
+            return view('templates/header')
+                .view('templates/navbarW')
                 . view('flights/create')
                 . view('templates/footer');
         }
@@ -72,7 +73,8 @@ public function viewflights()
             'Password'  => 'required|max_length[255]|min_length[3]',        
 ])) {
             // The validation fails, so returns the form.
-            return view('templates/header', ['title' => 'Create user'])
+            return view('templates/header')
+                .view('templates/navbarW')
                 . view('flights/create')
                 . view('templates/footer');
         }
@@ -86,7 +88,8 @@ public function viewflights()
             'Password'  => $post['Password'],
         ]);
 
-        return view('templates/header', ['title' => 'Create user'])
+        return view('templates/header')
+            .view('templates/navbarW')
             . view('flights/success')
             . view('templates/footer');
     }
@@ -98,7 +101,8 @@ public function viewflights()
         // Checks whether the form is submitted.
         if (! $this->request->is('post')) {
             // The form is not submitted, so returns the form.
-            return view('templates/header', ['title' => 'Create user'])
+            return view('templates/header')
+                .view('templates/navbarB', ['title' => 'Create user'])
                 . view('flights/reserve')
                 . view('templates/footer');
         }
@@ -119,7 +123,8 @@ public function viewflights()
             'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
             // The validation fails, so returns the form.
-            return view('templates/header', ['title' => 'Create user'])
+            return view('templates/header')
+                .view('templates/navbarB')
                 . view('flights/reserve')
                 . view('templates/footer');
         }
@@ -140,7 +145,8 @@ public function viewflights()
             
         ]);
 
-        return view('templates/header', ['title' => 'Create user'])
+        return view('templates/header')
+            .view('templates/navbarB')
             . view('flights/success')
             . view('templates/footer');
     }

@@ -1,27 +1,3 @@
-<!doctype html>
-<html lang="en">
-<html>
-<head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>BlazeDemoClone</title>
-</head>
-<body>
-<nav class="navbar navbar-lg bg-light">
-
-    <a class="navbar-brand" href="/"style="color:
-    Gray;">BlazeDemo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <a class="navbar-brand" href="" style="color:Gray;">Login</a>
-    <a class="navbar-brand" href="register" style="color:Gray;">Register</a>
-    
-    
-    </button>
-  </a>
-  
-  </nav>
 <?= session()->getFlashdata('error') ?>
 <?= validation_list_errors() ?>
 
