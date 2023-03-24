@@ -76,8 +76,12 @@
     <br>
   </div>
   <div class="form-group">
+    <p  class="text-left"  for="pwd"style="color:Gray;">Credit card type:</p>
+    <input type="input" name="CardType" value="<?= set_value('CardType') ?>">
+    <br>
+  <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Gray;">Credit Card Numbre</p>
-    <input type="input" name="CardNumber" value="<?= set_value('CardNumber') ?>">
+    <input type="input" name="CreditCard" value="<?= set_value('CreditCard') ?>">
     <br>
   </div>
   <div class="form-group">

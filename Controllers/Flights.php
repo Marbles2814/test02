@@ -3,15 +3,11 @@
 namespace App\Controllers;
 
 use App\Models\BlazeModel;
-
+use App\Models\UsersModel;
+use App\Models\ReservesModel;
 class Flights extends BaseController
 {
-                                 
-    public function __construct()
-	{
-		$this->db = \Config\Database::connect();
-	}
-                                              
+
     public function index()
     {
          $model = model(BlazeModel::class);
@@ -81,7 +77,7 @@ public function viewflights()
                 . view('templates/footer');
         }
 
-        $model = model(BlazeModel::class);
+        $model = model(UsersModel::class);
 
         $model->save([
             'Name' => $post['Name'],
@@ -107,14 +103,20 @@ public function viewflights()
                 . view('templates/footer');
         }
 
-        $post = $this->request->getPost(['Name', 'Company','Email','Password']);
+        $post = $this->request->getPost(['Name', 'Address','City','State','ZipCode','CardType','CreditCard','Month','Year','CardName']);
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, [
             'Name' => 'required|max_length[255]|min_length[3]',
-            'Company'  => 'required|max_length[255]|min_length[3]',
-            'Email' => 'required|max_length[255]|min_length[3]',
-            'Password'  => 'required|max_length[255]|min_length[3]',        
+            'Address'  => 'required|max_length[255]|min_length[3]',
+            'City' => 'required|max_length[255]|min_length[3]',
+            'State'  => 'required|max_length[255]|min_length[3]',
+            'ZipCode' => 'required|max_length[255]|min_length[3]',
+            'CardType'  => 'required|max_length[255]|min_length[3]',
+            'CreditCard' => 'required|max_length[255]|min_length[3]',
+            'Month'  => 'required|max_length[255]|min_length[3]',
+            'Year' => 'required|max_length[255]|min_length[3]',
+            'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
             // The validation fails, so returns the form.
             return view('templates/header', ['title' => 'Create user'])
@@ -122,13 +124,20 @@ public function viewflights()
                 . view('templates/footer');
         }
 
-        $model = model(BlazeModel::class);
+        $model = model(ReservesModel::class);
 
         $model->save([
             'Name' => $post['Name'],
-            'Company'  => $post['Company'],
-            'Email' => $post['Email'],
-            'Password'  => $post['Password'],
+            'Address' => $post['Address'],
+            'City' => $post['City'],
+            'State'  => $post['State'],
+            'ZipCode' => $post['ZipCode'],
+            'CardType'  => $post['CardType'],
+            'CreditCard' => $post['CreditCard'],
+            'Month'  => $post['Month'],
+            'Year' => $post['Year'],
+            'CardName'  => $post['CardName'],
+            
         ]);
 
         return view('templates/header', ['title' => 'Create user'])

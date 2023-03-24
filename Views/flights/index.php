@@ -12,7 +12,7 @@
 <tbody>
 <?php foreach($flights as $flights_item): ?>
 <tr>   
-    <td><p><a href="/purchase">Choose this flight</a></p> </td>
+    <td><p><a href="/flights/reserve">Choose this flight</a></p> </td>
     <td><?php echo $flights_item['FlightNum']; ?></td>
     <td><?php echo $flights_item['Airline']; ?></td>
     <td><?php echo $flights_item['Departs']; ?></td>
