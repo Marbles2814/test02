@@ -47,6 +47,7 @@ $routes->get('/vacation','Home::vacation');
 $routes->get('/reserve','Home::reserve');
 $routes->get('/purchase','Home::purchase');
 $routes->get('/resetpassword','Home::resetpassword');
+$routes->get('/confirmation','Home::confirmation');
 //-------------------------------------
 
 use App\Controllers\News;

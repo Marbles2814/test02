@@ -13,11 +13,11 @@ class Flights extends BaseController
          $model = model(BlazeModel::class);
 
         $data = [
-            'flights'  => $model->getFlights(),
+            'flights'  => $model->getFlightsQ(),
             'title' => 'Number of flight',
         ];
 
-        return view('templates/header', $data)
+        return view('templates/header')
             .view('templates/navbarB')
             . view('flights/index',$data)
             . view('templates/footer');
@@ -115,11 +115,11 @@ public function viewflights()
             'Address'  => 'required|max_length[255]|min_length[3]',
             'City' => 'required|max_length[255]|min_length[3]',
             'State'  => 'required|max_length[255]|min_length[3]',
-            'ZipCode' => 'required|max_length[255]|min_length[3]',
+            'ZipCode' => 'required|max_length[255]|min_length[5]',
             'CardType'  => 'required|max_length[255]|min_length[3]',
             'CreditCard' => 'required|max_length[255]|min_length[3]',
-            'Month'  => 'required|max_length[255]|min_length[3]',
-            'Year' => 'required|max_length[255]|min_length[3]',
+            'Month'  => 'required|max_length[2]|min_length[1]',
+            'Year' => 'required|max_length[4]|min_length[4]',
             'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
             // The validation fails, so returns the form.

@@ -1,4 +1,8 @@
 
+</br>
+    <h3>Flight from X to X </h3>
+    </br>
+
 <table class="table">
 <thead>
       <tr>
@@ -10,7 +14,7 @@
         <th>Price</th>
       </tr>
 <tbody>
-<?php foreach($flights as $flights_item): ?>
+<?php foreach($flights->getResult('array') as $flights_item): ?>
 <tr>   
     <td><p><a href="/flights/reserve">Choose this flight</a></p> </td>
     <td><?php echo $flights_item['FlightNum']; ?></td>

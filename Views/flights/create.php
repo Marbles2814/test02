@@ -28,22 +28,22 @@
     <?= csrf_field() ?>
   <div class="form-group">
     <p class="text-left" for="mail"style="color:Gray;" >Name:</p>
-    <input type="input" name="Name" value="<?= set_value('Name') ?>">
+    <input type="input" name="Name" value="<?= set_value('Name') ?>" required>
     <br>
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Gray;">Company:</p>
-    <input type="input" name="Company" value="<?= set_value('Company') ?>">
+    <input type="input" name="Company" value="<?= set_value('Company') ?>" required>
     <br>
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Gray;">E-Mail Address</p>
-    <input type="input" name="Email" value="<?= set_value('Email') ?>">
+    <input type="input" name="Email" value="<?= set_value('Email') ?>" required>
     <br>
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Gray;">Password:</p>
-    <input type="input" name="Password" value="<?= set_value('Password') ?>">
+    <input type="password" name="Password" value="<?= set_value('Password') ?>"required>
     <br>
   </div>
   <div class="container">

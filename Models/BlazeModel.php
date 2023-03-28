@@ -18,5 +18,10 @@ class BlazeModel extends Model
         return $this->where(['id' => $id])->first();
 
     }
+    
+    public function  getFlightsQ(){
+       $db = db_connect();
+       return $db->query('SELECT * FROM flights WHERE DepartC = "Paris" AND ArriveC = "Buenos Aires"');
+          }
 
 }

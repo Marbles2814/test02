@@ -53,4 +53,10 @@ class Home extends BaseController
             .view('templates/resetpassword')
             . view('templates/footer');
 }
+    public function confirmation(){
+       return view('templates/header')
+          .view('templates/navbarB')
+          .view('templates/confirmation')
+          .view('templates/footer');
+}
     }
