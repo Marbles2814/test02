@@ -31,23 +31,24 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 //-------------------------------------
-use App\Controllers\Flights;
+
+use App\Controllers\Home;
 //-------------------------------------
-$routes->match(['get', 'post'], 'flights/create', [Flights::class, 'create']);
-$routes->match(['get', 'post'], 'flights/reserve', [Flights::class, 'reserve']);
+$routes->match(['get', 'post'], '/create', [Home::class, 'create']);
+$routes->match(['get', 'post'], '/reserve', [Home::class, 'reserve']);
 use App\Controllers\Pages;
 //-------------------------------------
-$routes->get('flights/(:segment)', [Flights::class, 'view']);
-$routes->get('flights', [Flights::class, 'index']);
+
+$routes->post('/flights', [Home::class, 'flights']);
 
 
 $routes->get('/login', 'Home::login');
 $routes->get('/register','Home::register');
 $routes->get('/vacation','Home::vacation');
-$routes->get('/reserve','Home::reserve');
 $routes->get('/purchase','Home::purchase');
 $routes->get('/resetpassword','Home::resetpassword');
 $routes->get('/confirmation','Home::confirmation');
+$routes->get('/reserve','Home::reserve');
 //-------------------------------------
 
 use App\Controllers\News;

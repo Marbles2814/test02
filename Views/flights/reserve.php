@@ -19,7 +19,7 @@
     </br></br>
 
 
-<form action="/flights/reserve" method="post">
+<form action="/reserve" method="post">
 
     <?= csrf_field() ?>
   <div class="form-group">
@@ -49,12 +49,7 @@
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Black;">Credit card type:</p>
-    <input list="card" value="<?= set_value('CardType') ?>" required>
-    <datalist id="card">
-     <option value="VISA">
-     <option value="American Express">
-     <option value="Diner's club">
-   </datalist>
+    <input type="input" name="CardType" value="<?= set_value('CardType') ?>">
     <br>
   </div>
   <div class="form-group">

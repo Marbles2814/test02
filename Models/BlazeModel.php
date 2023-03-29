@@ -19,9 +19,10 @@ class BlazeModel extends Model
 
     }
     
-    public function  getFlightsQ(){
+    public function  getFlightsQ($D , $A ){
        $db = db_connect();
-       return $db->query('SELECT * FROM flights WHERE DepartC = "Paris" AND ArriveC = "Buenos Aires"');
-          }
+       $sql="SELECT * FROM flights WHERE DepartC = ? AND ArriveC = ?";
+       return $db->query($sql, array ($D, $A));
+   }
 
 }

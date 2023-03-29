@@ -3,7 +3,7 @@
 
 
 
-<form action="/flights/create" method="post">
+<form action="/create" method="post">
 <section class=" text-center text-lg-start">
   <style>
     .rounded-t-5 {
