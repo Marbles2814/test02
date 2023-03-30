@@ -1,4 +1,5 @@
 <form action="<?php base_url();?>flights" method='post'>
+<input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
 	<div class="container">
 	    <h2>Choose your departure city:<br /></h2>
 	    <select name="fromPort" class="custom-select">

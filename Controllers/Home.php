@@ -9,7 +9,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('templates/header')
+	
+      return view('templates/header')
             .view('templates/navbarB')
             .view('templates/Welcome')
             .view('templates/Welcome2')
@@ -57,11 +58,12 @@ class Home extends BaseController
    public function flights()
     {
         $model = model(BlazeModel::class);
-        $D =  $this->input->post("fromPort");
-        $A =  $this->input->post("toPort");
+        $D =  $_POST['fromPort'];
+        $A =  $_POST['toPort'];
         $data = [
             'flights'  => $model->getFlightsQ($D, $A),
-            'title' => 'Number of flight',
+            'from' => $D,
+            'to' => $A
         ];
         return view('templates/header')
             .view('templates/navbarB')

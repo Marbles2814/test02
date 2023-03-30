@@ -1,6 +1,6 @@
 
 </br>
-    <h3>Flight from X to X </h3>
+    <h3>Flight from <?php echo $from;?> to <?php echo $to;?> </h3>
     </br>
 
 <table class="table">

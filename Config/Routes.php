@@ -28,7 +28,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+//$routes->get('/', 'Home::index');
 
 //-------------------------------------
 
@@ -39,8 +39,8 @@ $routes->match(['get', 'post'], '/reserve', [Home::class, 'reserve']);
 use App\Controllers\Pages;
 //-------------------------------------
 
-$routes->post('/flights', [Home::class, 'flights']);
-
+$routes->post('/flights', 'Home::flights');
+$routes->match(['get', 'post'], '/', [Home::class,'index']);
 
 $routes->get('/login', 'Home::login');
 $routes->get('/register','Home::register');
