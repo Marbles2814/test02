@@ -44,9 +44,15 @@ class Home extends BaseController
             . view('templates/footer');
 }
     public function confirmation(){
+ $model = model(BlazeModel::class);
+        $CardNumber =  $_POST['CreditCard'];
+        $data = [
+            'CardNumber' => $CardNumber
+        ];
+var_dump($_POST);
        return view('templates/header')
           .view('templates/navbarB')
-          .view('templates/confirmation')
+          .view('templates/confirmation', $data)
           .view('templates/footer');
 }
    public function flights()
@@ -115,7 +121,7 @@ var_dump($_POST);
        
 
         // Checks whether the form is submitted.
-        if (! $this->request->is('post')) {
+        if ( $this->request->is('post')) {
      // The form is not submitted, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB', ['title' => 'Create user'])
@@ -139,11 +145,18 @@ var_dump($_POST);
             'Year' => 'required|max_length[4]|min_length[4]',
             'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
-$D =  $_POST['fromPort'];
+	$D =  $_POST['fromPort'];
         $A =  $_POST['toPort'];
+        $FlightNum =  $_POST['FlightNum'];
+        $Airline =  $_POST['Airline'];
+        $Price =  $_POST['Price'];
         $data = [
             'from' => $D,
-            'to' => $A
+            'to' => $A,
+	    'FlightNum' => $FlightNum,
+            'Airline' => $Airline,
+            'Price' => $Price
+
         ];
             // The validation fails, so returns the form.
             return view('templates/header')
@@ -167,10 +180,10 @@ $D =  $_POST['fromPort'];
             'CardName'  => $post['CardName'],
             
         ]);
-
-        return view('templates/header')
+        
+      return view('templates/header')
             .view('templates/navbarB')
-            . view('templates/confirmation')
-            . view('templates/footer');
+            .view('flights/success')
+            .view('templates/footer');
     }
     }

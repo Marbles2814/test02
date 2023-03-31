@@ -3,10 +3,6 @@
 </br>
     <h3>Flight from <?php echo $from?> to <?php echo $to;?> </h3>
     </br>
-<form action="<?php base_url();?>reserve" method = 'post'>
-<input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-<input type="hidden" name="fromPort" value="<?= $from ?>">
-<input type="hidden" name="toPort" value="<?= $to?>" >
 
 <table class="table">
 <thead>
@@ -20,6 +16,13 @@
       </tr>
 <tbody>
 <?php foreach($flights->getResult('array') as $flights_item): ?>
+<form action="<?php base_url();?>reserve" method = 'post'>
+<input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+<input type="hidden" name="fromPort" value="<?= $from ?>">
+<input type="hidden" name="toPort" value="<?= $to?>" >
+<input type="hidden" name="FlightNum" value="<?= $flights_item['FlightNum']; ?>">
+<input type="hidden" name="Airline" value="<?= $flights_item['Airline']; ?>" >
+<input type="hidden" name="Price" value="<?= $flights_item['Price']; ?>">
 <tr>
     <td><input type="submit" class="btn btn-primary" value="Choose this flight"></td>
     <td><?php echo $flights_item['FlightNum']; ?></td>

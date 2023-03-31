@@ -6,10 +6,10 @@
 </div>
 <div class="container">
     <div> 
-      <p> Airline:  </p>
-      <p> Flight number:  </p>
-      <p> Price:  </p>
-      <p> Arbitrary fees and taxes:  </p>
+      <p> Airline: <?= $Airline ?> </p>
+      <p> Flight number:  <?= $FlightNum ?> </p>
+      <p> Price:  <?= $Price ?></p>
+      <p> Arbitrary fees and taxes: $135.56  </p>
     </div>
       
    <br />
@@ -19,7 +19,7 @@
     </br></br>
 
 
-<form action="/reserve" method="post">
+<form action="<?php base_url();?>reserve" method="post">
 
     <?= csrf_field() ?>
   <div class="form-group">
