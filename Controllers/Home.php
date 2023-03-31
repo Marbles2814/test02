@@ -112,9 +112,11 @@ var_dump($_POST);
     {
         helper('form');
        
+       
+
         // Checks whether the form is submitted.
         if (! $this->request->is('post')) {
-            // The form is not submitted, so returns the form.
+     // The form is not submitted, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB', ['title' => 'Create user'])
                 . view('flights/reserve', $data)
@@ -137,10 +139,16 @@ var_dump($_POST);
             'Year' => 'required|max_length[4]|min_length[4]',
             'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
+$D =  $_POST['fromPort'];
+        $A =  $_POST['toPort'];
+        $data = [
+            'from' => $D,
+            'to' => $A
+        ];
             // The validation fails, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB')
-                . view('flights/reserve')
+                . view('flights/reserve',$data)
                 . view('templates/footer');
         }
 

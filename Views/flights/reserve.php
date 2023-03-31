@@ -2,7 +2,7 @@
 <?= validation_list_errors() ?>
 <br><br>
 <div class="container">
-    <h1>Your flight has been reserved.</h1>
+    <h1>Your flight from <?= $from?> to <?= $to;?> has been reserved.</h1>
 </div>
 <div class="container">
     <div> 
