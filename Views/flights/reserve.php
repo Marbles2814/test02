@@ -2,7 +2,7 @@
 <?= validation_list_errors() ?>
 <br><br>
 <div class="container">
-    <h1>Your flight from X to X has been reserved.</h1>
+    <h1>Your flight has been reserved.</h1>
 </div>
 <div class="container">
     <div> 
@@ -24,7 +24,7 @@
     <?= csrf_field() ?>
   <div class="form-group">
     <p class="text-left" for="mail"style="color:Black;" >Name:</p>
-    <input type="input" name="Name" value="<?= set_value('Name') ?>" maxlength="50" size="50" required>
+    <input type="input" name="Name" value="<?= set_value('Name') ?>" maxlength="50" size="50">
     <br>
   </div>
   <div class="form-group">

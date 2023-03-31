@@ -35,13 +35,7 @@ class Home extends BaseController
            .view('templates/vacation')
            .view('templates/footer');
 }
-    public function purchase()
-    {
-        return view('templates/header')
-            .view('templates/navbarB')
-            .view('templates/purchase')
-            . view('templates/footer');
-}
+
     public function resetpassword()
     {
         return view('templates/header')
@@ -65,6 +59,7 @@ class Home extends BaseController
             'from' => $D,
             'to' => $A
         ];
+var_dump($_POST);
         return view('templates/header')
             .view('templates/navbarB')
             . view('flights/flights',$data)
@@ -116,14 +111,15 @@ class Home extends BaseController
      public function reserve()
     {
         helper('form');
-
+       
         // Checks whether the form is submitted.
         if (! $this->request->is('post')) {
             // The form is not submitted, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB', ['title' => 'Create user'])
-                . view('flights/reserve')
+                . view('flights/reserve', $data)
                 . view('templates/footer');
+
         }
 
         $post = $this->request->getPost(['Name', 'Address','City','State','ZipCode','CardType','CreditCard','Month','Year','CardName']);

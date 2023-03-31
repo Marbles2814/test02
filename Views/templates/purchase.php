@@ -2,7 +2,7 @@
 <br />
 <div class="container">
     <div> 
-      <p> Airline:  </p>
+      <h3> Airline:  </h3>
       <p> Flight number:  </p>
       <p> Price:  </p>
       <p> Arbitrary fees and taxes:  </p>
