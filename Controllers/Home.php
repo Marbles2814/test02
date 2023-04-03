@@ -149,11 +149,11 @@ var_dump($_POST);
         $post = $this->request->getPost(['Name', 'Address','City','State','ZipCode','CardType','CreditCard','Month','Year','CardName', 'Rand1', 'Rand2']);
 
         // Checks whether the submitted data passed the validation rules.
-        if (! $this->validateData($post, [
+          if (! $this->validateData($post, [
             'Name' => 'required|max_length[255]|min_length[3]',
             'Address'  => 'required|max_length[255]|min_length[3]',
             'City' => 'required|max_length[255]|min_length[3]',
-            'State'  => 'required|max_length[255]|min_length[3]',
+           'State'  => 'required|max_length[255]|min_length[3]',
             'ZipCode' => 'required|max_length[255]|min_length[5]',
             'CardType'  => 'required|max_length[255]|min_length[3]',
             'CreditCard' => 'required|max_length[255]|min_length[3]',

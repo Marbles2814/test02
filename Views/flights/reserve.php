@@ -28,7 +28,7 @@
     <?= csrf_field() ?>
   <div class="form-group">
     <p class="text-left" for="mail"style="color:Black;" >Name:</p>
-    <input type="input" name="Name" value="<?= set_value('Name') ?>" maxlength="50" size="50">
+    <input type="input" name="Name" value="<?= set_value('Name') ?>" maxlength="50" size="50" required>
     <br>
   </div>
   <div class="form-group">
@@ -53,7 +53,7 @@
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Black;">Credit card type:</p>
-    <input type="input" name="CardType" value="<?= set_value('CardType') ?>">
+    <input type="input" name="CardType" value="<?= set_value('CardType') ?>" required>
     <br>
   </div>
   <div class="form-group">

@@ -9,7 +9,7 @@
 	   <option value="Portland">Portland</option>
 	   <option value="San Diego">San Diego</option>
 	   <option value="Mexico City">Mexico City</option>
-	   <option value="São Paolo">São Paolo</option>
+	   <option value="Sao Paolo">Sao Paolo</option>
 	   </select>
 	</div>
 	   

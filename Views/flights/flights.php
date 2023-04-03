@@ -32,7 +32,8 @@
     <td><?php echo $flights_item['Price']; ?></td>
 
 </tr>
+</form>
 <?php endforeach; ?>
 </tbody>
 </table>
-</form>
+

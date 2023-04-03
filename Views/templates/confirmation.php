@@ -7,7 +7,7 @@
     <div><Amount</p></div>
     <div><p>Card Number: <?= $CardNumber ?></p></div>
     <div><p>Expiration: <?= $Month?> / <?= $Year?> </p></div>
-    <div><p>Auth Code: </p></div>
-    <div><p>Date</p></div>
+    <div><p>Auth Code: <?= rand(); ?> </p></div>
+    <div><p>Date: <?= date('Y-m-d H:i:s'); ?> </p></div>
     </div>
 <?php endforeach; ?>
