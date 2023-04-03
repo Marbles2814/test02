@@ -20,7 +20,11 @@
 
 
 <form action="<?php base_url();?>reserve" method="post">
-
+<input type="hidden" name="fromPort" value="<?= $from ?>">
+<input type="hidden" name="toPort" value="<?= $to?>" >
+<input type="hidden" name="FlightNum" value="<?= $FlightNum; ?>">
+<input type="hidden" name="Airline" value="<?= $Airline; ?>" >
+<input type="hidden" name="Price" value="<?= $Price; ?>">
     <?= csrf_field() ?>
   <div class="form-group">
     <p class="text-left" for="mail"style="color:Black;" >Name:</p>
@@ -77,4 +81,6 @@
 <div class="container">
     <input type="submit" name="submit" value="Purchase Flight">
   </div>
+<input type="hidden" name="Rand1" value=<?= rand(); ?>>
+<input type="hidden" name="Rand2" value=<?= rand(); ?>>
 </form>

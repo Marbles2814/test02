@@ -44,10 +44,17 @@ class Home extends BaseController
             . view('templates/footer');
 }
     public function confirmation(){
- $model = model(BlazeModel::class);
-        $CardNumber =  $_POST['CreditCard'];
+        $model = model(ReservesModel::class);
+        $CardNumber =  $_POST['cardNumber'];
+        $Rand1 = $_POST['Rand1'];
+        $Rand2 = $_POST['Rand2'];
+        $Month = $_POST['Month'];
+        $Year = $_POST['Year'];
         $data = [
-            'CardNumber' => $CardNumber
+            'CardNumber' => $CardNumber,
+            'Id'  => $model->getId($Rand1, $Rand2),
+            'Month' => $Month,
+            'Year' => $Year,
         ];
 var_dump($_POST);
        return view('templates/header')
@@ -117,20 +124,29 @@ var_dump($_POST);
      public function reserve()
     {
         helper('form');
-       
-       
+        $D = $_POST['fromPort'];
+        $A =  $_POST['toPort'];
+        $FlightNum =  $_POST['FlightNum'];
+        $Airline =  $_POST['Airline'];
+        $Price =  $_POST['Price'];
+        $data = [
+            'from' => $D,
+            'to' => $A,
+	    'FlightNum' => $FlightNum,
+            'Airline' => $Airline,
+            'Price' => $Price
+       ];
 
         // Checks whether the form is submitted.
-        if ( $this->request->is('post')) {
+        if (! $this->request->is('post')) {
      // The form is not submitted, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB', ['title' => 'Create user'])
                 . view('flights/reserve', $data)
                 . view('templates/footer');
-
         }
 
-        $post = $this->request->getPost(['Name', 'Address','City','State','ZipCode','CardType','CreditCard','Month','Year','CardName']);
+        $post = $this->request->getPost(['Name', 'Address','City','State','ZipCode','CardType','CreditCard','Month','Year','CardName', 'Rand1', 'Rand2']);
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, [
@@ -145,26 +161,12 @@ var_dump($_POST);
             'Year' => 'required|max_length[4]|min_length[4]',
             'CardName'  => 'required|max_length[255]|min_length[3]',        
 ])) {
-	$D =  $_POST['fromPort'];
-        $A =  $_POST['toPort'];
-        $FlightNum =  $_POST['FlightNum'];
-        $Airline =  $_POST['Airline'];
-        $Price =  $_POST['Price'];
-        $data = [
-            'from' => $D,
-            'to' => $A,
-	    'FlightNum' => $FlightNum,
-            'Airline' => $Airline,
-            'Price' => $Price
-
-        ];
             // The validation fails, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB')
                 . view('flights/reserve',$data)
                 . view('templates/footer');
         }
-
         $model = model(ReservesModel::class);
 
         $model->save([
@@ -178,12 +180,13 @@ var_dump($_POST);
             'Month'  => $post['Month'],
             'Year' => $post['Year'],
             'CardName'  => $post['CardName'],
-            
+            'Rand1' => $post['Rand1'],
+            'Rand2' => $post['Rand2'],
         ]);
-        
-      return view('templates/header')
+
+     return view('templates/header')
             .view('templates/navbarB')
             .view('flights/success')
-            .view('templates/footer');
+           .view('templates/footer');
     }
     }

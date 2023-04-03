@@ -35,7 +35,7 @@ $routes->set404Override();
 use App\Controllers\Home;
 //-------------------------------------
 $routes->match(['get', 'post'], '/create', [Home::class, 'create']);
-$routes->post('/reserve', 'Home::reserve');
+$routes->match(['get','post'], '/reserve', [Home::class, 'reserve']);
 use App\Controllers\Pages;
 //-------------------------------------
 
