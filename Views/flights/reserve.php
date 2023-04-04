@@ -25,6 +25,7 @@
 <input type="hidden" name="FlightNum" value="<?= $FlightNum; ?>">
 <input type="hidden" name="Airline" value="<?= $Airline; ?>" >
 <input type="hidden" name="Price" value="<?= $Price; ?>">
+<input type="hidden" name="Flag" value=1>
     <?= csrf_field() ?>
   <div class="form-group">
     <p class="text-left" for="mail"style="color:Black;" >Name:</p>
@@ -53,7 +54,11 @@
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Black;">Credit card type:</p>
-    <input type="input" name="CardType" value="<?= set_value('CardType') ?>" required>
+    <select name="CardType" class="custom-select">
+	   <option value="Visa">Visa</option>
+	   <option value="American Express">American Express</option>
+	   <option value="Diners Club">Diners Club</option>
+    </select>
     <br>
   </div>
   <div class="form-group">

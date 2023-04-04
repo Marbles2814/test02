@@ -23,6 +23,7 @@
 <input type="hidden" name="FlightNum" value="<?= $flights_item['FlightNum']; ?>">
 <input type="hidden" name="Airline" value="<?= $flights_item['Airline']; ?>" >
 <input type="hidden" name="Price" value="<?= $flights_item['Price']; ?>">
+<input type="hidden" name="Flag" value=0>
 <tr>
     <td><input type="submit" class="btn btn-primary" value="Choose this flight"></td>
     <td><?php echo $flights_item['FlightNum']; ?></td>

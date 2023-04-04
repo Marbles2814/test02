@@ -50,11 +50,13 @@ class Home extends BaseController
         $Rand2 = $_POST['Rand2'];
         $Month = $_POST['Month'];
         $Year = $_POST['Year'];
+        $Price = $_POST['Price'];
         $data = [
             'CardNumber' => $CardNumber,
             'Id'  => $model->getId($Rand1, $Rand2),
             'Month' => $Month,
             'Year' => $Year,
+            'Price' => $Price,
         ];
 var_dump($_POST);
        return view('templates/header')
@@ -97,7 +99,7 @@ var_dump($_POST);
         if (! $this->validateData($post, [
             'Name' => 'required|max_length[255]|min_length[3]',
             'Company'  => 'required|max_length[255]|min_length[3]',
-            'Email' => 'required|max_length[255]|min_length[3]',
+            'Email' => 'required|max_length[255]|min_length[3]|is_unique[users.Email]',
             'Password'  => 'required|max_length[255]|min_length[3]',        
 ])) {
             // The validation fails, so returns the form.
@@ -129,17 +131,20 @@ var_dump($_POST);
         $FlightNum =  $_POST['FlightNum'];
         $Airline =  $_POST['Airline'];
         $Price =  $_POST['Price'];
+        $Flag = $_POST['Flag'];
         $data = [
             'from' => $D,
             'to' => $A,
 	    'FlightNum' => $FlightNum,
             'Airline' => $Airline,
-            'Price' => $Price
+            'Price' => $Price,
+            'Flag' => $Flag
        ];
 
         // Checks whether the form is submitted.
-        if (! $this->request->is('post')) {
-     // The form is not submitted, so returns the form.
+
+         if ($Flag==0) {
+        // The form is not submitted, so returns the form.
             return view('templates/header')
                 .view('templates/navbarB', ['title' => 'Create user'])
                 . view('flights/reserve', $data)
@@ -153,7 +158,7 @@ var_dump($_POST);
             'Name' => 'required|max_length[255]|min_length[3]',
             'Address'  => 'required|max_length[255]|min_length[3]',
             'City' => 'required|max_length[255]|min_length[3]',
-           'State'  => 'required|max_length[255]|min_length[3]',
+            'State'  => 'required|max_length[255]|min_length[3]',
             'ZipCode' => 'required|max_length[255]|min_length[5]',
             'CardType'  => 'required|max_length[255]|min_length[3]',
             'CreditCard' => 'required|max_length[255]|min_length[3]',
