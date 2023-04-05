@@ -1,5 +1,5 @@
 
-
+<?= session()->getFlashdata('error') ?>
 </br>
     <h3>Flight from <?php echo $from?> to <?php echo $to;?> </h3>
     </br>

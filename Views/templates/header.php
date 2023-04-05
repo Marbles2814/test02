@@ -1,3 +1,4 @@
+<?= session()->getFlashdata('error') ?>
 <!doctype html>
 <html lang="en">
 <html>

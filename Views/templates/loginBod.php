@@ -23,7 +23,7 @@
 
           <div class="form-group">
             <p class="text-left" for="mail"style="color:Gray;" >E-Mail Address:</p>
-            <input type="text" class="form-control" id="usr">
+            <input type="email" class="form-control" id="usr">
           </div>
           <div class="form-group">
             <p  class="text-left"  for="pwd"style="color:Gray;">Password:</p>

@@ -161,7 +161,7 @@ var_dump($_POST);
             'State'  => 'required|max_length[255]|min_length[3]',
             'ZipCode' => 'required|max_length[255]|min_length[5]',
             'CardType'  => 'required|max_length[255]|min_length[3]',
-            'CreditCard' => 'required|max_length[255]|min_length[3]',
+            'CreditCard' => 'required|max_length[18]|min_length[16]',
             'Month'  => 'required|max_length[2]|min_length[1]',
             'Year' => 'required|max_length[4]|min_length[4]',
             'CardName'  => 'required|max_length[255]|min_length[3]',        
@@ -189,6 +189,7 @@ var_dump($_POST);
             'Rand2' => $post['Rand2'],
         ]);
 
+//return redirect('Home/confirmation');
      return view('templates/header')
             .view('templates/navbarB')
             .view('flights/success')

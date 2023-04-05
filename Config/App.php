@@ -393,7 +393,7 @@ class App extends BaseConfig
      *
      * @deprecated Use `Config\Security` $regenerate property instead of using this property.
      */
-    public bool $CSRFRegenerate = true;
+    public bool $CSRFRegenerate = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -404,7 +404,7 @@ class App extends BaseConfig
      *
      * @deprecated Use `Config\Security` $redirect property instead of using this property.
      */
-    public bool $CSRFRedirect = false;
+    public bool $CSRFRedirect = true;
 
     /**
      * --------------------------------------------------------------------------

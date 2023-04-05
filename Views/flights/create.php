@@ -1,6 +1,6 @@
 <?= session()->getFlashdata('error') ?>
 <?= validation_list_errors() ?>
-
+<?= helper('form'); ?>
 
 
 <form action="/create" method="post">
@@ -38,7 +38,7 @@
   </div>
   <div class="form-group">
     <p  class="text-left"  for="pwd"style="color:Gray;">E-Mail Address</p>
-    <input type="input" name="Email" value="<?= set_value('Email') ?>" required>
+    <input type="email" name="Email" value="<?= set_value('Email') ?>" required>
     <br>
   </div>
   <div class="form-group">

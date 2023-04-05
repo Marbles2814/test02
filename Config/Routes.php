@@ -36,7 +36,7 @@ use App\Controllers\Home;
 //-------------------------------------
 $routes->match(['get', 'post'], '/create', [Home::class, 'create']);
 $routes->match(['get','post'], '/reserve', [Home::class, 'reserve']);
-use App\Controllers\Pages;
+//use App\Controllers\Pages;
 //-------------------------------------
 
 $routes->post('/flights', 'Home::flights');
@@ -50,15 +50,15 @@ $routes->get('/resetpassword','Home::resetpassword');
 $routes->post('/confirmation','Home::confirmation');
 //-------------------------------------
 
-use App\Controllers\News;
+//use App\Controllers\News;
 
-$routes->match(['get', 'post'], 'news/create', [News::class, 'create']);
+//$routes->match(['get', 'post'], 'news/create', [News::class, 'create']);
 
-$routes->get('news/(:segment)', [News::class, 'view']);
-$routes->get('news', [News::class, 'index']);
+//$routes->get('news/(:segment)', [News::class, 'view']);
+//$routes->get('news', [News::class, 'index']);
 
-$routes->get('pages', [Pages::class, 'index']);
-$routes->get('(:segment)', [Pages::class, 'view']);
+//$routes->get('pages', [Pages::class, 'index']);
+//$routes->get('(:segment)', [Pages::class, 'view']);
 
 
 /*

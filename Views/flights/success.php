@@ -1,4 +1,5 @@
  </br></br>
+<div class="row g-0 d-flex align-items-center">
 <div class="container">
 <h1>Reservation created successfully.</h1>
 <form action="<?php base_url();?>confirmation" method = 'post'>
